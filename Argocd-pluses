@@ -1,0 +1,14 @@
+ArgoCD Pluses
+-----------------
+
+ArgoCD is a potent continuous delivery tool.
+Analyzing the well-being of application resources.
+Enhancing the CD journey with ArgoCD's next-level capabilities.
+Streamlined application deployment to specified target environments using automation.
+Handling deployments to multiple clusters seamlessly.
+Automating Git repository polling every three minutes with Argo CD, ensuring continuous synchronization and timely deployments.
+It Offers versatility by supporting different config management and templating tools like Customize, Helm, Jsonnet, and plain-YAML.
+
+
+#ArgoCD# #Guide#
+A comprehensive walkthrough for deploying to Kubernetes "Cool Guide".

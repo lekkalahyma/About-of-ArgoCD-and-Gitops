@@ -1,0 +1,18 @@
+Argo CD
+About Argocd?
+------------------
+Argo CD simplifies and enhances Kubernetes deployment as a declarative continuous delivery tool.
+why we use ?
+--------------------
+Argo CD simplifies and fortifies application deployment on Kubernetes. By embracing GitOps principles, it automates deployment workflows, ensuring accuracy and reliability across environments. Its focus on efficiency and consistency makes managing applications a seamless experience within Kubernetes clusters."
+How to Install?
+-----------------
+commands:
+ kubectl create namespace argocd (Here I'm taking argocd is my namespace)
+ kubectl apply -n argocd -f https://lnkd.in/eWK8he4T
+ kubectl get pod -n argocd
+ kubectl get svc -n argocd
+ kubectl port-forward svc/argocd-server -n argocd 8080:443
+Once we execute the below command it will give the password
+ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
+now we can access then in our browser 127.0.0.1:8080

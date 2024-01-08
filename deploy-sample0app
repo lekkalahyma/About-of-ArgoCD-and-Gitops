@@ -1,0 +1,35 @@
+Deploy the sample application using Argocd
+
+I deployed a sample Nginx application on a Minikube cluster using Argo CD.
+
+First, the application was created with the following settings:
+App Name: test
+Project Name: default
+Sync Policy: Automatic
+Prune Propagation Policy: foreground
+
+In the source section:
+Repository URL: https://lnkd.in/gNkwxkKH
+Revision: HEAD
+Path: charts/hello-world
+
+Destination settings:
+Cluster URL: https://kubernetes.default.svc
+Namespace: test (created using the command: kubectl create ns test)
+
+Additionally, in the Helm section:
+Values Files: values.yaml
+After creating the app, it appeared in the Argo CD UI. Accessing the application, I initiated the synchronization and started the deployment.
+
+
+For example, to increase the number of replicas:
+Navigate to the app details section.
+Adjust the parameters by setting replica=10.
+This action increased the number of pods accordingly.
+
+To check the application on my local machine, I used curl 192.168.49.2:31808. 
+However, to access the application locally, I needed to perform port forwarding
+socat TCP-LISTEN:31808,fork TCP:192.168.49.2:127.0.0.1
+
+This setup allowed me to access the application via 127.0.0.1:31808 on my local system.
+Activate to view larger image,
